@@ -1,11 +1,17 @@
 const express = require("express");
+require("dotenv").config();
+
+const port = process.env.PORT || 4000;
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+//directorio publico
+app.use(express.static("public"));
 
-app.listen(4000, () => {
-  console.log(`http://localhost:${4000}`);
+// app.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
+
+app.listen(port, () => {
+  console.log(`http://localhost:${port}`);
 });
