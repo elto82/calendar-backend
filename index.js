@@ -8,9 +8,10 @@ const app = express();
 //directorio publico
 app.use(express.static("public"));
 
-// app.get("/", (req, res) => {
-//   res.send("Hello World");
-// });
+//auth // crear, login, renew
+app.use("/api/auth", require("./routes/auth"));
+
+//CRUD: Events
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
