@@ -1,9 +1,13 @@
 const express = require("express");
+const { dbCocnnection } = require("./database/config");
 require("dotenv").config();
 
 const port = process.env.PORT || 4000;
 
 const app = express();
+
+//base de datos
+dbCocnnection();
 
 //directorio publico
 app.use(express.static("public"));
